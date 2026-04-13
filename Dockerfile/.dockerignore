@@ -1,0 +1,4 @@
+debug.log
+*.tmp
+.git
+__pycache__
