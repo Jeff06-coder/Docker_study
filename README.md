@@ -79,3 +79,23 @@ Access terminal inside the container
 
 Running the container in detached mode, naming it and mapping its port
 (Executando o contêiner em modo desanexado, nomeando-o e mapeando sua porta)
+
+*docker volume create database_docker*
+
+You create a space in Docker so that you can store data in it
+(Você cria um espaço no Docker para poder armazenar dados nele)
+
+*docker run -d --name the_container -e POSTGRES_PASSWORD=mysecretpassword -v database_docker:/var/lib/postgresql/data postgres:16*
+
+Running the container with the volume, putting Postgres to work in the container, passing the mandatory password, storing it in the mandatory Postgres folders, downloading its image
+(Executar o container com o volume, colocar o Postgres para funcionar no container, passar a senha obrigatória, armazenar nas pastas obrigatórias do Postgres, baixar sua imagem)
+
+*docker exec -it the_container psql -U postgres*
+
+Placing the data in the database
+(Colocando os dados no banco de dados)
+
+*docker run -d --name dev_nginx -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx:latest*
+
+Bind Mount is running, synchronizing the current folder ($(pwd)) with the nginx docker folder
+(Bind Mount está em execução, sincronizando a pasta atual ($(pwd)) com a pasta nginx docker)
